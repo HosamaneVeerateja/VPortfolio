@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hosamane Veera Teja</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            scroll-behavior: smooth;
+            background: url('https://wallpapercave.com/wp/wp12401480.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; /* Align items to the left */
+            text-align: left; /* Ensure text is left-aligned */
+            color: white;
+            padding-left: 500px; /* Optional: add some padding to the left */
+        }
+        
+        header h1 {
+            font-size: 3.5em;
+            margin: 0;
+        }
+        
+        header h2 {
+            font-size: 1.5em; /* Adjust the font size if needed */
+            margin-top: 20px; /* Add margin to create space between name and title */
+            /*font-weight: normal;  Optional: Make the h2 text lighter */
+        }
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        /*nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            padding: 5px 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            background: white;
+            color: #333;
+        }*/
+
+        nav a {
+            border: none; /* Removes the border */
+            box-shadow: none; /* Removes any shadow around the elements */
+            padding: 5px; /* Optional: Adjust padding for better spacing */
+            text-decoration: none; /* Ensures there is no underline */
+            text-underline-offset: 5px; /* Adjust the space between underline and text */
+            background: none; /* Removes background color if set */
+            color: inherit; /* Keeps the text color consistent */
+        }
+        
+        nav a:hover {
+            text-decoration: underline; /* Optional: Adds underline on hover for better user experience */
+        }
+        
+        /* Main Layout */
+        .main {
+            display: grid;
+            grid-template-columns: 20% 80%;
+            height: auto;
+            color: white;
+        }
+        .left {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        /* Navigation Section */
+        .nav-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 50px;  /* Adds space on top */
+            flex-grow: 1;  /* Makes sure nav items are pushed down to the center */
+            justify-content: center; /* Centers the navigation vertically */
+        }
+        .nav-section a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .nav-section a:hover {
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+            transform: scale(1.05);
+        }
+        /* Contact Section */
+        .contact-section {
+            margin-top: 30px;
+        }
+        .contact-section h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .contact-section p {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #ccc;
+        }
+        .contact-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .contact-icons a {
+            color: white;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        .contact-icons a:hover {
+            color: #6c63ff;
+        }
+        /* Right Content */
+        .right {
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 100vh;
+        }
+        .section {
+            padding: 50px 20px;
+            color: white;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        .section:nth-child(even) {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .main {
+                grid-template-columns: 100%;
+            }
+            .left {
+                position: relative;
+                transform: none;
+                top: 0;
+                left: 0;
+                max-width: none;
+                width: 100%;
+                height: auto;
+            }
+        }
+        .education-group {
+            margin-bottom: 25px;
+        }
+        
+        .education-header {
+            display: flex;
+            justify-content: space-between;  /* Aligns the college name and year */
+            font-size: 1.2em;
+            margin-bottom: 0px; /* Reduced space between college/year and course/CGPA */
+        }
+        
+        .education-details {
+            margin-top: 5px;
+            display: flex;
+            justify-content: space-between;  /* Aligns the course name and CGPA */
+        }
+        
+        .year {
+            font-weight: bold;
+            text-align: right;  /* Aligns the year to the right */
+        }
+        
+        .college-name {
+            font-weight: bold;
+            text-align: left;  /* Aligns the college name to the left */
+        }
+        
+        .education-details p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .project {
+            margin-bottom: 50px; /* Adjust the value for desired spacing */
+        }
+
+        .project h3 a {
+            text-decoration: none; /* Removes underline */
+            color: #e8ecf0; /* Link color */
+            transition: color 0.3s;
+        }
+        
+        .project h3 a:hover {
+            color: #2c3e50; /* Hover color */
+        }
+
+        .link-icon {
+            margin-left: 5px; /* Adds spacing between title and icon */
+            font-size: 0.8em; /* Slightly smaller size for the icon */
+            color: #2c3e50; /* Match the link color */
+            text-decoration: none; /* Removes underline */
+            transition: color 0.3s;
+        }
+        
+        .link-icon:hover {
+            color: #2c3e50; /* Changes color on hover */
+        }
+        
+        
+        #skills {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            margin: 20px 0;
+            text-align: left;
+        }
+        
+        #skills h2 {
+            font-size: 2em;
+            color: #eee9e9;
+            margin-bottom: 20px;
+            display: left;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .skills-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .skill-item {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        #certificates {
+            background-color: #eef2f5;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        #certificates h2 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .certificates-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .certificate-item {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+        }
+        
+        .certificate-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            background-color: #2c3e50;
+        }
+        
+        /* Contact information styling */
+        /* Container styling */
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent container */
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            font-size: 1.1em;
+        }
+
+        .contact-info a {
+            color: #83bfec;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        /* Form styling */
+        form {
+            background-color: #000000;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        form input, form textarea {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        form textarea {
+            resize: vertical;
+        }
+
+        form .btn-container {
+            display: flex;
+            justify-content: center; /* Center the button horizontally */
+            margin-top: 10px; /* Add some space above the button */
+        }
+        
+        form .btn {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+        
+        form .btn:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header>
+        <h1>Hosamane Veera Teja</h1>
+        <h2>Software Engineer</h2>
+        <nav>
+            <a href="#about"><strong>About</strong></a>
+            <a href="#education"><strong>Education</strong></a>
+            <a href="#work"><strong>Work</strong></a>
+            <a href="#projects"><strong>Projects</strong></a>
+            <a href="#skills"><strong>Skills</strong></a>
+            <a href="#certifications"><strong>Certifications</strong></a>
+            <a href="#connect"><strong>Connect</strong></a>
+        </nav>
+    </header>
+    <!-- Main Content -->
+    <div class="main">
+        <!-- Left Navigation and Contact -->
+        <div class="left">
+            <div class="nav-section">
+                <a href="#about"><i class="fas fa-user"></i><strong>About</strong></a>
+                <a href="#education"><i class="fas fa-graduation-cap"></i> <strong>Education</strong></a>
+                <a href="#work"><i class="fas fa-briefcase"></i> <strong>Work</strong></a>
+                <a href="#projects"><i class="fas fa-project-diagram"></i> <strong>Projects</strong></a>
+                <a href="#skills"><i class="fas fa-cogs"></i> <strong>Skills</strong></a>
+                <a href="#certifications"><i class="fas fa-certificate"></i> <strong>Certifications</strong></a>
+                <a href="#connect"><i class="fa-solid fa-paper-plane"></i> <strong>Connect</strong></a>
+            </div>
+            <div class="contact-section">
+                <h2>Contact</h2>
+                <p>Hosamane Veera Teja</p>
+                <p>hosamaneveerateja@gmail.com</p>
+                <p>+91 9177568957</p>
+                <div class="contact-icons">
+                    <a href="https://linkedin.com/in/hosamaneveerateja" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/hosamaneveerateja" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="http://t.me/Gintoki_gintama" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Right Content -->
+        <div class="right">
+            <section id="about" class="section">
+                <h2>Welcome</h2>
+                <p>Hello, I’m <strong> Hosamane Veera Teja </strong>. I hold an Integrated MTech degree in Software Engineering from Vellore Institute of Technology.</p>
+                <p>My diverse experiences and enthusiasm for technology drive me to continually enhance my skills and explore new possibilities.</p>
+                <p>I am a highly motivated Software Engineer with expertise in software development, cloud services, and machine learning, passionate about creating impactful applications.</p>
+            </section>
+            <section id="education" class="section">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            
+                <div class="education-group">
+                    <div class="education-header">
+                        <h4 class="college-name">Vellore Institute of Technology (VIT)</h4>
+                        <p class="year"><small><em>2019 - 2024</em></small></p>
+                    </div>
+                    <div class="education-details">
+                        <p><small><strong>MTech (Integrated) - Software Engineering</strong></small></p>
+                        <p><small><em>CGPA: 8.49</em></small></p>
+                    </div>
+                </div>
+                
+                <div class="education-group">
+                    <div class="education-header">
+                        <h4 class="college-name">Narayana Junior College</h4>
+                        <p class="year"><small><em>2018 - 2019</em></small></p>
+                    </div>
+                    <div class="education-details">
+                        <p><small><strong>MPC - Board of Intermediate Education</strong></small></p>
+                        <p><small><em>CGPA: 9.71</em></small></p>
+                    </div>
+                </div>
+                
+                <div class="education-group">
+                    <div class="education-header">
+                        <h4 class="college-name">Narayana Group of Schools</h4>
+                        <p class="year"><small><em>2017 - 2018</em></small></p>
+                    </div>
+                    <div class="education-details">
+                        <p><small><strong>SSC - Board of Secondary Education</strong></small></p>
+                        <p><small><em>CGPA: 9.5</em></small></p>
+                    </div>
+                </div>
+                
+                
+            </section>
+            <section id="work" class="section">
+                <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+                <h3>Nokia Solutions and Networks</h3>
+                <p><strong><small>Software Trainee</small></strong></strong><span style="float: right; font-style: italic;"><small>Aug 2023 - May 2024</small></span></p>
+                <ul style="line-height: 3;">                    
+                    <li>Engaged in System Component Testing while configuring CI/CD pipelines with Jenkins to automate software build, test, and deployment processes.</li>
+                    <li>Contributed to the development of software for cloud services in the Cloud RAN domain, writing C++ code and designing unit tests.</li>
+                    <li>Experienced with Robot Framework for test automation, creating structured test cases to validate software functionality.</li>
+                </ul>
+
+            </section>
+            <section id="projects" class="section">
+                <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+                <div class="project">
+                    <h3><a href="https://github.com/HosamaneVeerateja/Hotel_Management_System" target="_blank">Hotel Management System</a>
+                        <a href="https://example.com/active-city-administration" target="_blank" class="link-icon">
+                            <i class="fa-solid fa-link"></i>
+                        </a>
+                    </h3>
+                    <p><strong>Tech Stack:</strong> Java, Java Swing, SQL</p>
+                        <ul style="line-height: 3;">                            
+                            <li>Collaborated with a team of 3 to develop and implement a comprehensive hotel management system project.</li>
+                            <li>Engineered and launched a system consolidating hotel operations, managing room assignments, staff coordination, and customer interactions; implemented a driver preference feature, increasing occupancy rates by 40%.</li>
+                            <li>Orchestrated SQL to manage confidential customer records, ensuring 100% data integrity and compliance with privacy regulations.</li>
+                        </ul>
+                    </div>
+                    <div class="project">
+                        <h3><a href="https://github.com/HosamaneVeerateja/Questionpaper_Difficulty_Analysis" target="_blank">Question Paper Difficulty Analysis</a>
+                            <a href="https://github.com/HosamaneVeerateja/Questionpaper_Difficulty_Analysis" target="_blank" class="link-icon">
+                                <i class="fa-solid fa-link"></i>
+                            </a>
+                        </h3>
+                        <p><strong>Tech Stack:</strong> Python, Jupyter Notebook</p>
+                        <ul style="line-height: 3;">                            
+                            <li>Deployed Python programming in Jupyter Notebook to preprocess question data, partitioning it into training and test sets for analysis.</li>
+                            <li>Utilized machine learning methods to analyze student feedback and categorize question paper difficulty, achieving a Random Forest accuracy of 94.6%.</li>
+                            <li>Visualized and compared model accuracies to enhance comprehension of test perception and assessment methodologies.</li>
+                        </ul>
+                    </div>
+                    <div class="project">
+                        <h3><a href="https://github.com/HosamaneVeerateja/Active_City_Administration" target="_blank">Active City Administration</a>
+                            <a href="https://github.com/HosamaneVeerateja/Active_City_Administration" target="_blank" class="link-icon">
+                                <i class="fa-solid fa-link"></i>
+                            </a>
+                        </h3>
+                        <p><strong>Tech Stack:</strong> HTML, CSS, PHP</p>
+                        <ul style="line-height: 3;">                            
+                            <li>Developed an online web application enabling communication among users, municipal authorities, and administrators.</li>
+                            <li>Implemented functionalities tailored to citizens, municipal authorities, and administrators for efficient interaction.</li>
+                            <li>Designed and integrated four main components – Police Station, Municipal Corporation, Fire Station, and Complaint/Suggestion module – for streamlined management and operation.</li>
+                        </ul>
+                    </div>                
+            </section>
+            <section id="skills" class="section">
+                    <h2><i class="fas fa-cogs"></i> Skills</h2>
+                    <div class="skills-box">
+                        <div class="skill-item">Java</div>
+                        <div class="skill-item">Python</div>
+                        <div class="skill-item">C++</div>
+                        <div class="skill-item">HTML</div>
+                        <div class="skill-item">CSS</div>
+                        <div class="skill-item">JavaScript</div>
+                        <div class="skill-item">SQL</div>
+                        <div class="skill-item">Data Structures</div>
+                        <div class="skill-item">Operating Systems</div>
+                        <div class="skill-item">Kubernetes</div>
+                        <div class="skill-item">Jenkins</div>
+                        <div class="skill-item">Git</div>
+                        <div class="skill-item">Linux</div>
+                    </div>                
+            </section>
+            <section id="certifications" class="section">
+                    <h2><i class="fas fa-certificate"></i> Certifications</h2>
+                    <div class="certificates-box">
+                        <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/PwC%20Switzerland/a87GpgE6tiku7q3gu_PwC%20Switzerland_EhmWXps5BBZAkWPzr_1726382528745_completion_certificate.pdf" target="_blank" class="certificate-item">
+                            PwC-Switzerland-Power-BI - Forage
+                        </a>
+                        <a href="https://www.credly.com/badges/a35b703d-fe8f-45b2-a153-495dd3d5141b/linked_in_profile" target="_blank" class="certificate-item">
+                            Data Analytics Essentials – Cisco
+                        </a>
+                        <a href="https://www.mygreatlearning.com/certificate/WHZVVTCO" target="_blank" class="certificate-item">
+                            Java Programming
+                        </a>
+                        <a href="https://www.mygreatlearning.com/certificate/ESOUNEZL" target="_blank" class="certificate-item">
+                            UI/UX
+                        </a>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/CZC7G3HB66RH?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" target="_blank" class="certificate-item">
+                            Foundations of User Experience (UX) Design
+                        </a>
+                        <a href="https://fsp-assessment-certificates.s3-ap-southeast-1.amazonaws.com/HosamaneVeerateja-86489440.pdf" target="_blank" class="certificate-item">
+                            Fundamentals of Data Analytics by Analytics
+                        </a>
+                    </div>                
+            </section>
+            <section id="connect" class="section">
+                    <h2><i class="fa-solid fa-paper-plane"></i> Let's Connect</h2>
+                        <p>If you'd like to get in touch, please use the form below or reach out via email or LinkedIn.</p>
+
+                <form action="mailto:hosamaneveerateja@gmail.com" method="post" enctype="text/plain">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                                
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                                
+                    <div class="btn-container">
+                      <button type="submit" class="btn">Send Message</button>
+                    </div>
+                </form>                                
+            </section>
+        </div>
+    </div>
+</body>
+</html>
